@@ -26,8 +26,8 @@ class Message {
 
   Map<String, dynamic> toJson() => {
         key: value,
-        '@$key': {
-          if (description != null) 'description': description,
+        if (description != null) '@$key': {
+           'description': description,
         }
       };
 }

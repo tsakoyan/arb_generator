@@ -3,13 +3,12 @@ import 'package:test/test.dart';
 
 void main() {
   group('Message', () {
-    test('When description is null, expect empty @key', () {
+    test('When description is null, do not expect a @key', () {
       final message = Message(key: 'myKey', value: 'myValue');
       expect(
         message.toJson(),
         {
           'myKey': 'myValue',
-          '@myKey': {},
         },
       );
     });
@@ -55,7 +54,6 @@ void main() {
         {
           '@@locale': 'en',
           'myKey': 'myValue',
-          '@myKey': {},
         },
       );
     });
